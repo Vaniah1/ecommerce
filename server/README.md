@@ -55,22 +55,10 @@ Document your API endpoints here. For example:
 
 ## Testing
 
-To run tests:
+To run tests do npm test
 
 npm test
 
 ## Deployment
 
 Add instructions for deploying the server to production.
-
-## Contributing
-
-If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
-
-## Troubleshooting
-
-Include common issues and their solutions here.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
