@@ -31,13 +31,14 @@ const Header = ({ user }: PropsType) => {
   };
 
   return (
-    <nav className="header bg-black text-white">
+    <div className="header bg-black text-white flex items-center justify-center">
       <div className="flex items-center justify-between">
-        <FaCartShopping className="text-4xl" />
+        <FaCartShopping className="text-5xl" aria-hidden="true" />
         <Link
-          className="text-white font-bold text-4xl"
+          className="text-white font-bold text-5xl"
           onClick={() => setIsOpen(false)}
           to={"/"}
+          tabIndex={0}
         >
           Shoppy
         </Link>
@@ -47,41 +48,55 @@ const Header = ({ user }: PropsType) => {
         className="text-white"
         onClick={() => setIsOpen(false)}
         to={"/search"}
+        tabIndex={0}
+        aria-label="Search"
       >
-        <FaSearch />
+        <FaSearch aria-hidden="true" />
       </Link>
-      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
-        <FaShoppingBag />
+      <Link
+        onClick={() => setIsOpen(false)}
+        to={"/cart"}
+        tabIndex={0}
+        aria-label="Cart"
+      >
+        <FaShoppingBag aria-hidden="true" />
       </Link>
-
       {user?._id ? (
         <>
-          <button onClick={() => setIsOpen((prev) => !prev)}>
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            tabIndex={0}
+            aria-haspopup="dialog"
+            aria-expanded={isOpen}
+          >
             <FaUser />
           </button>
-          <dialog open={isOpen}>
+          <dialog className="bg-black text-white" open={isOpen}>
             <div>
               {user.role === "admin" && (
-                <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  to="/admin/dashboard"
+                  tabIndex={0}
+                >
                   Admin
                 </Link>
               )}
-
-              <Link onClick={() => setIsOpen(false)} to="/orders">
+              <Link onClick={() => setIsOpen(false)} to="/orders" tabIndex={0}>
                 Orders
               </Link>
-              <button onClick={logoutHandler}>
-                <FaSignOutAlt />
+              <button onClick={logoutHandler} tabIndex={0}>
+                Sign Out
               </button>
             </div>
           </dialog>
         </>
       ) : (
-        <Link to={"/login"}>
-          <FaSignInAlt />
+        <Link to={"/login"} tabIndex={0} aria-label="Sign In">
+          <FaSignInAlt aria-hidden="true" />
         </Link>
       )}
-    </nav>
+    </div>
   );
 };
 

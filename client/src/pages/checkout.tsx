@@ -75,8 +75,11 @@ const CheckOutForm = () => {
     setIsProcessing(false);
   };
   return (
-    <div className="checkout-container">
-      <form onSubmit={submitHandler}>
+    <div className="checkout-container flex justify-center items-center p-[100px] m-10">
+      <form
+        className="flex justify-center items-center"
+        onSubmit={submitHandler}
+      >
         <PaymentElement />
         <button type="submit" disabled={isProcessing}>
           {isProcessing ? "Processing..." : "Pay"}

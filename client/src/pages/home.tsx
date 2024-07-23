@@ -15,13 +15,10 @@ import { LuShieldCheck } from "react-icons/lu";
 
 const clients = [
   {
-    src: "https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg",
-    alt: "react",
+    src: "https://www.vectorlogo.zone/logos/github/github-ar21.svg",
+    alt: "github",
   },
-  {
-    src: "https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg",
-    alt: "node",
-  },
+
   {
     src: "https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg",
     alt: "mongodb",
@@ -39,21 +36,8 @@ const clients = [
     alt: "typescript",
   },
   {
-    src: "https://www.vectorlogo.zone/logos/sass-lang/sass-lang-ar21.svg",
-    alt: "sass",
-  },
-  {
     src: "https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg",
     alt: "firebase",
-  },
-  {
-    src: "https://www.vectorlogo.zone/logos/figma/figma-ar21.svg",
-    alt: "figma",
-  },
-
-  {
-    src: "https://www.vectorlogo.zone/logos/github/github-ar21.svg",
-    alt: "github",
   },
 
   {
@@ -83,15 +67,6 @@ const clients = [
     src: "https://www.vectorlogo.zone/logos/redis/redis-ar21.svg",
     alt: "Redis",
   },
-
-  {
-    src: "https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg",
-    alt: "PostgreSQL",
-  },
-  {
-    src: "https://www.vectorlogo.zone/logos/jenkins/jenkins-ar21.svg",
-    alt: "Jenkins",
-  },
 ];
 
 const banners = [
@@ -117,7 +92,7 @@ const services = [
   {
     icon: <TbTruckDelivery />,
     title: "FREE AND FAST DELIVERY",
-    description: "Free delivery for all orders over $200",
+    description: "Free delivery for all orders over Ksh 200000",
   },
   {
     icon: <LuShieldCheck />,
@@ -246,7 +221,7 @@ const Home = () => {
 
       <article className="our-clients">
         <div>
-          <h2>Our Clients</h2>
+          <h2>Technologies Used</h2>
           <div>
             {clients.map((client, i) => (
               <motion.img

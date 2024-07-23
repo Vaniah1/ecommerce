@@ -8,6 +8,7 @@ import { FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
 import { MessageResponse } from "../types/api-types";
 import { userExist, userNotExist } from "../redux/reducer/userReducer";
 import { useDispatch } from "react-redux";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -57,9 +58,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login ">
       <main>
-        <h1 className="heading">Login</h1>
+        <FaShoppingCart />
+        <h1 className="heading font-bold ">Login To Shoppy</h1>
 
         <div>
           <label>Gender</label>
@@ -82,7 +84,7 @@ const Login = () => {
         <div>
           <p>Already Signed In Once</p>
           <button onClick={loginHandler}>
-            <FcGoogle /> <span>Sign in with Google</span>
+            <FcGoogle className="rounded" /> <span>Sign in with Google</span>
           </button>
         </div>
       </main>

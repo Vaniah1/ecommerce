@@ -12,6 +12,9 @@ import { userExist, userNotExist } from "./redux/reducer/userReducer";
 import { RootState } from "./redux/store";
 import Footer from "./components/footer";
 import "./index.css";
+import DiscountManagement from "./pages/admin/management/discountmanagement";
+import NewDiscount from "./pages/admin/management/newdiscount";
+import Discount from "./pages/admin/discount";
 
 const Home = lazy(() => import("./pages/home"));
 const Search = lazy(() => import("./pages/search"));
@@ -24,12 +27,10 @@ const OrderDetails = lazy(() => import("./pages/order-details"));
 const NotFound = lazy(() => import("./pages/not-found"));
 const Checkout = lazy(() => import("./pages/checkout"));
 
-// Admin Routes Importing
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
 const Products = lazy(() => import("./pages/admin/products"));
 const Customers = lazy(() => import("./pages/admin/customers"));
 const Transaction = lazy(() => import("./pages/admin/transaction"));
-const Discount = lazy(() => import("./pages/admin/discount"));
 const Barcharts = lazy(() => import("./pages/admin/charts/barcharts"));
 const Piecharts = lazy(() => import("./pages/admin/charts/piecharts"));
 const Linecharts = lazy(() => import("./pages/admin/charts/linecharts"));
@@ -43,11 +44,6 @@ const ProductManagement = lazy(
 const TransactionManagement = lazy(
   () => import("./pages/admin/management/transactionmanagement")
 );
-const DiscountManagement = lazy(
-  () => import("./pages/admin/management/discountmanagement")
-);
-
-const NewDiscount = lazy(() => import("./pages/admin/management/newdiscount"));
 
 const App = () => {
   const { user, loading } = useSelector(
