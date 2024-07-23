@@ -31,7 +31,8 @@ const Header = ({ user }: PropsType) => {
   };
 
   return (
-    <div className="header bg-black text-white flex items-center justify-center">
+    <div className="header bg-gradient-to-r from-indigo-700 to-purple-400 text-white flex items-center justify-center">
+      {" "}
       <div className="flex items-center justify-between">
         <FaCartShopping className="text-5xl" aria-hidden="true" />
         <Link
@@ -43,7 +44,6 @@ const Header = ({ user }: PropsType) => {
           Shoppy
         </Link>
       </div>
-
       <Link
         className="text-white"
         onClick={() => setIsOpen(false)}
@@ -71,7 +71,10 @@ const Header = ({ user }: PropsType) => {
           >
             <FaUser />
           </button>
-          <dialog className="bg-black text-white" open={isOpen}>
+          <dialog
+            className="bg-gradient-to-r from-indigo-700 to-purple-400 text-white"
+            open={isOpen}
+          >
             <div>
               {user.role === "admin" && (
                 <Link
