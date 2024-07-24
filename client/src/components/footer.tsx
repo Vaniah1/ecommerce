@@ -7,10 +7,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer bg-gradient-to-r from-purple-400 to-indigo-800 text-black font-bold">
       <div className="footer-container">
         <div className="footer-row">
-          <div className="footer-col">
+          <div className="footer-col text-black">
             <h4>Company</h4>
             <ul>
               <li>
