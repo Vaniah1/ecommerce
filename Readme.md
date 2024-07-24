@@ -41,6 +41,7 @@ This e-commerce application is built using the MERN stack (MongoDB, Express.js, 
 - Redux for state management
 - React Router for navigation
 - Suspense and lazy loading for performance optimization
+- SCSS for advanced styling
 
 ## 🔍 Detailed Look at Key Files
 
@@ -101,6 +102,54 @@ These React features are used to improve initial load time by splitting the code
 ### Protected Routes
 
 The application implements protected routes to ensure that certain pages are only accessible to logged-in users or admins, enhancing security.
+
+### SCSS (Sass)
+
+SCSS is used instead of regular CSS for its advanced features and benefits:
+
+- Nesting: Allows for more organized and readable stylesheets
+- Variables: Enables easy management of colors, fonts, and other repeated values
+- Mixins: Promotes reusability of style blocks
+- Functions: Provides ability to compute and manipulate values
+- Partials: Allows splitting styles into smaller, more manageable files
+- Inheritance: Enables extending styles from one selector to another
+
+SCSS brings several advantages to the codebase:
+
+- Improved maintainability: Easier to organize and update styles
+- Enhanced productivity: Less repetition and more efficient styling
+- Better code structure: Clearer hierarchy and relationships between elements
+- Easier theming: Variables make it simple to change global styles
+- Advanced features: Like loops and conditionals for more dynamic styling
+
+### Docker Configuration
+
+#### @client\Dockerfile
+
+This Dockerfile is used for production deployment:
+
+- Uses Node.js 20 as the base image
+- Sets up the working directory
+- Copies package files and installs dependencies
+- Copies the entire project and builds it
+- Runs the preview command for production serving
+
+#### @client\Dockerfile.dev
+
+This Dockerfile is used for development:
+
+- Uses Node.js 20 as the base image
+- Sets up the working directory
+- Copies package files and installs dependencies
+- Copies the entire project
+- Runs the development server
+
+These Dockerfiles enable:
+
+- Consistent development environments across different machines
+- Easy deployment and scaling of the application
+- Isolation of the application and its dependencies
+- Simplified CI/CD processes
 
 # Running the Application Locally
 
