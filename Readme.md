@@ -4,11 +4,11 @@ Welcome to this exciting e-commerce project! 🛍️
 
 ## 👨‍💻 About the Developer
 
-This project is brought to you by **Vaniah Ndungu**, a passionate full-stack MERN developer with a love for:
+This project is brought to you by **Vaniah Ndungu**, a passionate junior full-stack web developer with a passion for:
 
 - 💻 Coding
 - 🎵 Music
-- 🏥 Medicine (Helping people)
+- 🏥 Medicine
 
 ## 🌟 Project Overview
 
@@ -111,6 +111,7 @@ The application implements protected routes to ensure that certain pages are onl
 - Redis account
 - Stripe account
 - Cloudinary account
+- Firebase account
 
 ## Setup
 
@@ -142,7 +143,14 @@ The application implements protected routes to ensure that certain pages are onl
 
    Create a `.env` file in the client directory with the following content:
 
-   REACT_APP_API_URL=http://localhost:4000
+   VITE_FIREBASE_KEY=<your-firebase-key>
+   VITE_AUTH_DOMAIN=<your-firebase-auth-domain>
+   VITE_PROJECT_ID=<your-firebase-project-id>
+   VITE_STORAGE_BUCKET=<your-firebase-storage-bucket>
+   VITE_MESSAGING_SENDER_ID=<your-firebase-messaging-sender-id>
+   VITE_APP_ID=<your-firebase-app-id>
+   VITE_SERVER=http://localhost:4000
+   VITE_STRIPE_KEY=<your-stripe-publishable-key>
 
    Replace the placeholder values with your actual credentials.
 
@@ -163,19 +171,40 @@ The application implements protected routes to ensure that certain pages are onl
 - Make sure your Redis instance is active and reachable.
 - Verify that your Stripe account is set up correctly for handling payments.
 - Confirm that your Cloudinary account is properly configured for image uploads.
+- Set up your Firebase project and obtain the necessary credentials.
 
 ## Troubleshooting
 
 - If you encounter any connection issues, double-check your environment variables and ensure they are correctly set.
 - For any dependency-related errors, try deleting the `node_modules` folder and running `npm install` again in both the root and client directories.
 
+## 🌟 Project Highlights
+
+This e-commerce project stands out with its modern tech stack and user-friendly features:
+
+1. 🔒 **Secure Authentication**: Utilizes Firebase for robust user authentication.
+2. 🎨 **Sleek UI**: Built with React and styled for an intuitive shopping experience.
+3. 🚀 **High Performance**: Implements Redis caching for lightning-fast data retrieval.
+4. 📊 **Comprehensive Admin Panel**: Provides powerful tools for managing products, orders, and analytics.
+5. 💳 **Seamless Payments**: Integrates Stripe for secure and easy transactions.
+6. 📸 **Dynamic Image Management**: Uses Cloudinary for efficient image uploads and storage.
+7. 📱 **Responsive Design**: Ensures a great shopping experience across all devices.
+
 ## 🤝 Contributing
 
-We welcome contributions! Feel free to open issues or submit pull requests.
+We welcome contributions! Feel free to open issues or submit pull requests. Here's how you can contribute:
 
-## 📫 Contact
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-For any questions or feedback, please reach out to Vaniah Ndungu at Vaniah1 in github.
+## 🌐 Social Media
+
+For any questions or feedback, please reach out to Vaniah Ndungu:
+
+- GitHub: [Vaniah1](https://github.com/Vaniah1)
 
 ---
 
