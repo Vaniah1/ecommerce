@@ -24,7 +24,7 @@ const PieCharts = () => {
     <div className="admin-container">
       <AdminSidebar />
       <main className="chart-container">
-        <h1>Pie & Doughnut Charts</h1>
+        <h1 className="font-bold text-3xl text-center">Pie Data Charts</h1>
 
         {isLoading ? (
           <Skeleton length={20} />

@@ -55,7 +55,7 @@ const NewProduct = () => {
   };
 
   return (
-    <div className="admin-container">
+    <div className="admin-container flex -z-10">
       <AdminSidebar />
       <main className="product-management">
         <article>

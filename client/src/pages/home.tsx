@@ -71,7 +71,9 @@ const clients = [
 
 const banners = [
   "https://res.cloudinary.com/dj5q966nb/image/upload/v1719253445/rmbjpuzctjdbtt8hewaz.png",
+  "https://i.pinimg.com/564x/1f/75/a4/1f75a4bf9518ea635f983c5af012b84b.jpg",
   "https://res.cloudinary.com/dj5q966nb/image/upload/v1719253433/ticeufjqvf6napjhdiee.png",
+  "https://i.pinimg.com/564x/f4/8b/c4/f48bc44bdf3847d4e91cae3525b94873.jpg",
 ];
 const categories = [
   "Electronics",

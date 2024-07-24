@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaSearch, FaShoppingBag, FaSignInAlt, FaUser } from "react-icons/fa";
+import {
+  FaSearch,
+  FaShoppingBag,
+  FaSignInAlt,
+  FaUser,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import { useState } from "react";
 import { User } from "../types/types";
 import { signOut } from "firebase/auth";
@@ -25,75 +31,60 @@ const Header = ({ user }: PropsType) => {
   };
 
   return (
-    <div className="header bg-gradient-to-r from-indigo-700 to-purple-400 text-white flex items-center justify-center">
-      {" "}
+    <nav className="header bg-gradient-to-r from-purple-400 to-indigo-800 text-white">
       <div className="flex items-center justify-between">
-        <FaCartShopping className="text-5xl" aria-hidden="true" />
+        <FaCartShopping className="text-4xl" />
         <Link
-          className="text-white font-bold text-5xl"
+          className="text-white font-bold text-4xl"
           onClick={() => setIsOpen(false)}
           to={"/"}
-          tabIndex={0}
         >
           Shoppy
         </Link>
       </div>
+
       <Link
         className="text-white"
         onClick={() => setIsOpen(false)}
         to={"/search"}
-        tabIndex={0}
-        aria-label="Search"
       >
-        <FaSearch aria-hidden="true" />
+        <FaSearch />
       </Link>
-      <Link
-        onClick={() => setIsOpen(false)}
-        to={"/cart"}
-        tabIndex={0}
-        aria-label="Cart"
-      >
-        <FaShoppingBag aria-hidden="true" />
+      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
+        <FaShoppingBag />
       </Link>
+
       {user?._id ? (
         <>
-          <button
-            onClick={() => setIsOpen((prev) => !prev)}
-            tabIndex={0}
-            aria-haspopup="dialog"
-            aria-expanded={isOpen}
-          >
+          <button onClick={() => setIsOpen((prev) => !prev)}>
             <FaUser />
           </button>
           <dialog
-            className="bg-gradient-to-r from-indigo-700 to-purple-400 text-white"
+            className="bg-gradient-to-r from-purple-400 to-indigo-800 z-50"
             open={isOpen}
           >
-            <div>
+            <div className="bg-gradient-to-r from-purple-400 to-indigo-800">
               {user.role === "admin" && (
-                <Link
-                  onClick={() => setIsOpen(false)}
-                  to="/admin/dashboard"
-                  tabIndex={0}
-                >
+                <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
                   Admin
                 </Link>
               )}
-              <Link onClick={() => setIsOpen(false)} to="/orders" tabIndex={0}>
+
+              <Link onClick={() => setIsOpen(false)} to="/orders">
                 Orders
               </Link>
-              <button onClick={logoutHandler} tabIndex={0}>
-                Sign Out
+              <button onClick={logoutHandler}>
+                <FaSignOutAlt />
               </button>
             </div>
           </dialog>
         </>
       ) : (
-        <Link to={"/login"} tabIndex={0} aria-label="Sign In">
-          <FaSignInAlt aria-hidden="true" />
+        <Link to={"/login"}>
+          <FaSignInAlt />
         </Link>
       )}
-    </div>
+    </nav>
   );
 };
 
