@@ -43,6 +43,10 @@ This e-commerce application is built using the MERN stack (MongoDB, Express.js, 
 - Suspense and lazy loading for performance optimization
 - SCSS for advanced styling
 
+### Testing
+
+- Playwright for end-to-end testing
+
 ## 🔍 Detailed Look at Key Files
 
 ### @server\src\routes\user.ts
@@ -238,6 +242,7 @@ This e-commerce project stands out with its modern tech stack and user-friendly 
 5. 💳 **Seamless Payments**: Integrates Stripe for secure and easy transactions.
 6. 📸 **Dynamic Image Management**: Uses Cloudinary for efficient image uploads and storage.
 7. 📱 **Responsive Design**: Ensures a great shopping experience across all devices.
+8. 🧪 **End-to-End Testing**: Implements Playwright for comprehensive end-to-end testing.
 
 ## 🤝 Contributing
 
