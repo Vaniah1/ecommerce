@@ -1,8 +1,7 @@
 # 🚀 Shoppy: E-Commerce Project
 
 Welcome to this exciting e-commerce project! 🛍️
-(https://giphy.com/gifs/ProBItExchange-dog-hello-hi-XO8RMtRaK73isIt0i2)
-
+!(https://giphy.com/embed/XO8RMtRaK73isIt0i2" width="480" height="298" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ProBItExchange-dog-hello-hi-XO8RMtRaK73isIt0i2)
 ## 👨‍💻 About the Developer
 
 This project is brought to you by **Vaniah Ndungu**, a passionate junior full-stack web developer with a passion for:
