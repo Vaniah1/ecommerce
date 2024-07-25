@@ -132,21 +132,29 @@ SCSS brings several advantages to the codebase:
 
 This Dockerfile is used for production deployment:
 
-- Uses Node.js 20 as the base image
-- Sets up the working directory
-- Copies package files and installs dependencies
-- Copies the entire project and builds it
-- Runs the preview command for production serving
+```dockerfile
+
+   FROM node:20
+   WORKDIR /app
+   COPY package*.json ./
+   RUN npm install
+   COPY . .
+   RUN npm run build
+   CMD ["npm", "run", "preview"]
+```
 
 #### @client\Dockerfile.dev
 
 This Dockerfile is used for development:
 
-- Uses Node.js 20 as the base image
-- Sets up the working directory
-- Copies package files and installs dependencies
-- Copies the entire project
-- Runs the development server
+```dockerfile
+   FROM node:20
+   WORKDIR /app
+   COPY package*.json ./
+   RUN npm install
+   COPY . .
+   CMD ["npm", "run", "dev"]
+```
 
 These Dockerfiles enable:
 
@@ -168,55 +176,68 @@ These Dockerfiles enable:
 
 ## Setup
 
-1. Clone the repository:
+1.  Clone the repository:
 
-   git clone <repository-url>
-   cd <project-directory>
+```bash
 
-2. Install dependencies:
+git clone <repository-url>
+cd <project-directory>
+```
 
-   npm install
-   cd client
-   npm install
-   cd ..
+2.  Install dependencies:
 
-3. Set up environment variables:
+```bash
+npm install
+```
 
-   Create a `.env` file in the server directory with the following content:
+3.  Set up environment variables:
 
-   PORT=4000
-   MONGO_URI=<your-mongodb-uri>
-   REDIS_URI=<your-redis-uri>
-   STRIPE_KEY=<your-stripe-secret-key>
-   CLOUD_NAME=<your-cloudinary-cloud-name>
-   CLOUD_API_KEY=<your-cloudinary-api-key>
-   CLOUD_API_SECRET=<your-cloudinary-api-secret>
-   CLIENT_URL=http://localhost:3000
-   PRODUCT_PER_PAGE=8
+Create a `.env` file in the server directory with the following content:
 
-   Create a `.env` file in the client directory with the following content:
+```env
 
-   VITE_FIREBASE_KEY=<your-firebase-key>
-   VITE_AUTH_DOMAIN=<your-firebase-auth-domain>
-   VITE_PROJECT_ID=<your-firebase-project-id>
-   VITE_STORAGE_BUCKET=<your-firebase-storage-bucket>
-   VITE_MESSAGING_SENDER_ID=<your-firebase-messaging-sender-id>
-   VITE_APP_ID=<your-firebase-app-id>
-   VITE_SERVER=http://localhost:4000
-   VITE_STRIPE_KEY=<your-stripe-publishable-key>
+PORT=4000
+MONGO_URI=<your-mongodb-uri>
+REDIS_URI=<your-redis-uri>
+STRIPE_KEY=<your-stripe-secret-key>
+CLOUD_NAME=<your-cloudinary-cloud-name>
+CLOUD_API_KEY=<your-cloudinary-api-key>
+CLOUD_API_SECRET=<your-cloudinary-api-secret>
+CLIENT_URL=http://localhost:3000
+PRODUCT_PER_PAGE=8
+```
 
-   Replace the placeholder values with your actual credentials.
+Create a `.env` file in the client directory with the following content:
 
-4. Start the server:
+```env
 
-   npm run server
+VITE_FIREBASE_KEY=<your-firebase-key>
+VITE_AUTH_DOMAIN=<your-firebase-auth-domain>
+VITE_PROJECT_ID=<your-firebase-project-id>
+VITE_STORAGE_BUCKET=<your-firebase-storage-bucket>
+VITE_MESSAGING_SENDER_ID=<your-firebase-messaging-sender-id>
+VITE_APP_ID=<your-firebase-app-id>
+VITE_SERVER=http://localhost:4000
+VITE_STRIPE_KEY=<your-stripe-publishable-key>
+```
 
-5. In a new terminal, start the client:
+Replace the placeholder values with your actual credentials.
 
+4.  Start the server:
+
+```bash
+npm run server
+```
+
+5.  In a new terminal, start the client:
+
+```bash
    cd client
    npm start
 
-6. Open your browser and navigate to `http://localhost:3000` to view the application.
+```
+
+6.  Open your browser and navigate to `http://localhost:3000` to view the application.
 
 ## Additional Notes
 
@@ -235,24 +256,24 @@ These Dockerfiles enable:
 
 This e-commerce project stands out with its modern tech stack and user-friendly features:
 
-1. 🔒 **Secure Authentication**: Utilizes Firebase for robust user authentication.
-2. 🎨 **Sleek UI**: Built with React and styled for an intuitive shopping experience.
-3. 🚀 **High Performance**: Implements Redis caching for lightning-fast data retrieval.
-4. 📊 **Comprehensive Admin Panel**: Provides powerful tools for managing products, orders, and analytics.
-5. 💳 **Seamless Payments**: Integrates Stripe for secure and easy transactions.
-6. 📸 **Dynamic Image Management**: Uses Cloudinary for efficient image uploads and storage.
-7. 📱 **Responsive Design**: Ensures a great shopping experience across all devices.
-8. 🧪 **End-to-End Testing**: Implements Playwright for comprehensive end-to-end testing.
+1.  🔒 **Secure Authentication**: Utilizes Firebase for robust user authentication.
+2.  🎨 **Sleek UI**: Built with React and styled for an intuitive shopping experience.
+3.  🚀 **High Performance**: Implements Redis caching for lightning-fast data retrieval.
+4.  📊 **Comprehensive Admin Panel**: Provides powerful tools for managing products, orders, and analytics.
+5.  💳 **Seamless Payments**: Integrates Stripe for secure and easy transactions.
+6.  📸 **Dynamic Image Management**: Uses Cloudinary for efficient image uploads and storage.
+7.  📱 **Responsive Design**: Ensures a great shopping experience across all devices.
+8.  🧪 **End-to-End Testing**: Implements Playwright for comprehensive end-to-end testing.
 
 ## 🤝 Contributing
 
 We welcome contributions! Feel free to open issues or submit pull requests. Here's how you can contribute:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1.  Fork the repository
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ## 🌐 Social Media
 
