@@ -1,4 +1,4 @@
-# 🚀 Awesome E-Commerce Project
+# 🚀 Shoppy: E-Commerce Project
 
 Welcome to this exciting e-commerce project! 🛍️
 
