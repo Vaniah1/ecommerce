@@ -285,13 +285,13 @@ For any questions or feedback, please reach out to Vaniah Ndungu:
 ## 🌐 Live link
 To view the project live link:
 
--[Project Link](https://shoppy-vaniah.netlify.app/)
+- [Project Link](https://shoppy-vaniah.netlify.app/)
 
 
 Happy coding and happy shopping! 🎉🛍️
 
 ---
----
-##Thank you very much DirectEd Development Foundation for this wonderful opportunity🙏
----
+
+## Thank you very much DirectEd Development Foundation for this wonderful opportunity🙏
+
 ---
