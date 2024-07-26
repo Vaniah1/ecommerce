@@ -12,17 +12,22 @@ import { FaShoppingCart } from "react-icons/fa";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [gender, setGender] = useState("");
-  const [date, setDate] = useState("");
+  const [gender, setGender] = useState<string>("");
+  const [date, setDate] = useState<string>("");
 
   const [login] = useLoginMutation();
 
   const loginHandler = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const { user } = await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
 
-      console.log({
+      if (!user) {
+        throw new Error("User information is missing");
+      }
+
+      const userData = {
         name: user.displayName!,
         email: user.email!,
         photo: user.photoURL!,
@@ -30,22 +35,20 @@ const Login = () => {
         role: "user",
         dob: date,
         _id: user.uid,
-      });
+      };
 
-      const res = await login({
-        name: user.displayName!,
-        email: user.email!,
-        photo: user.photoURL!,
-        gender,
-        role: "user",
-        dob: date,
-        _id: user.uid,
-      });
+      console.log(userData);
+
+      const res = await login(userData);
 
       if ("data" in res) {
         toast.success(res.data.message);
         const data = await getUser(user.uid);
-        dispatch(userExist(data?.user!));
+        if (data?.user) {
+          dispatch(userExist(data.user));
+        } else {
+          throw new Error("User data not found");
+        }
       } else {
         const error = res.error as FetchBaseQueryError;
         const message = (error.data as MessageResponse).message;
@@ -53,38 +56,60 @@ const Login = () => {
         dispatch(userNotExist());
       }
     } catch (error) {
-      toast.error("Sign In Fail");
+      const errorMessage =
+        error instanceof Error ? error.message : "Sign In Failed";
+      toast.error(errorMessage);
     }
   };
 
   return (
-    <div className="login ">
-      <main>
-        <FaShoppingCart />
-        <h1 className="heading font-bold ">Login To Shoppy</h1>
+    <div className="login min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
+      <main className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <FaShoppingCart className="text-4xl mx-auto mb-4 text-gray-800" />
+        <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">
+          Login to Shoppy
+        </h1>
 
-        <div>
-          <label>Gender</label>
-          <select value={gender} onChange={(e) => setGender(e.target.value)}>
+        <div className="mb-4">
+          <label htmlFor="gender" className="block text-gray-700 mb-2">
+            Gender
+          </label>
+          <select
+            id="gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            aria-label="Select Gender"
+          >
             <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
 
-        <div>
-          <label>Date of birth</label>
+        <div className="mb-6">
+          <label htmlFor="dob" className="block text-gray-700 mb-2">
+            Date of Birth
+          </label>
           <input
+            id="dob"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            aria-label="Date of Birth"
           />
         </div>
 
-        <div>
-          <p>Already Signed In Once</p>
-          <button onClick={loginHandler}>
-            <FcGoogle className="rounded" /> <span>Sign in with Google</span>
+        <div className="flex flex-col items-center">
+          <p className="text-gray-700 mb-4">Already signed in once?</p>
+          <button
+            onClick={loginHandler}
+            className="flex items-center bg-blue-600 text-white p-2 rounded-lg shadow hover:bg-blue-700 transition-all"
+            aria-label="Sign in with Google"
+          >
+            <FcGoogle className="text-2xl mr-2" />
+            <span>Sign in with Google</span>
           </button>
         </div>
       </main>

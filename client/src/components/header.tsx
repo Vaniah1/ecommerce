@@ -26,64 +26,95 @@ const Header = ({ user }: PropsType) => {
       toast.success("Sign Out Successfully");
       setIsOpen(false);
     } catch (error) {
-      toast.error("Sign Out Fail");
+      toast.error("Sign Out Failed");
     }
   };
 
   return (
-    <nav className="header bg-gradient-to-r from-purple-400 to-indigo-800 text-white">
-      <div className="flex items-center justify-between">
-        <FaCartShopping className="text-4xl" />
+    <nav className="header bg-gradient-to-r from-purple-400 to-indigo-800 text-white flex items-center justify-between p-4">
+      <div className="flex items-center">
+        <Link
+          to="/"
+          className="text-white font-bold text-4xl mr-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <FaCartShopping className="text-4xl" />
+        </Link>
         <Link
           className="text-white font-bold text-4xl"
           onClick={() => setIsOpen(false)}
-          to={"/"}
+          to="/"
         >
           Shoppy
         </Link>
       </div>
 
-      <Link
-        className="text-white"
-        onClick={() => setIsOpen(false)}
-        to={"/search"}
-      >
-        <FaSearch />
-      </Link>
-      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
-        <FaShoppingBag />
-      </Link>
-
-      {user?._id ? (
-        <>
-          <button onClick={() => setIsOpen((prev) => !prev)}>
-            <FaUser />
-          </button>
-          <dialog
-            className="bg-gradient-to-r from-purple-400 to-indigo-800 z-50"
-            open={isOpen}
-          >
-            <div className="bg-gradient-to-r from-purple-400 to-indigo-800">
-              {user.role === "admin" && (
-                <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
-                  Admin
-                </Link>
-              )}
-
-              <Link onClick={() => setIsOpen(false)} to="/orders">
-                Orders
-              </Link>
-              <button onClick={logoutHandler}>
-                <FaSignOutAlt />
-              </button>
-            </div>
-          </dialog>
-        </>
-      ) : (
-        <Link to={"/login"}>
-          <FaSignInAlt />
+      <div className="flex items-center space-x-4">
+        <Link
+          className="text-white"
+          onClick={() => setIsOpen(false)}
+          to="/search"
+          aria-label="Search"
+        >
+          <FaSearch className="text-2xl" />
         </Link>
-      )}
+        <Link
+          className="text-white"
+          onClick={() => setIsOpen(false)}
+          to="/cart"
+          aria-label="Cart"
+        >
+          <FaShoppingBag className="text-2xl" />
+        </Link>
+
+        {user?._id ? (
+          <>
+            <button
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label="User menu"
+            >
+              <FaUser className="text-2xl" />
+            </button>
+            <dialog
+              className="bg-gradient-to-r from-purple-400 to-indigo-800 z-50 p-4 rounded-lg"
+              open={isOpen}
+              onClick={() => setIsOpen(false)} // Close dialog when clicking outside
+            >
+              <div className="bg-gradient-to-r from-purple-400 to-indigo-800 p-4 rounded-lg">
+                {user.role === "admin" && (
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    to="/admin/dashboard"
+                    aria-label="Admin Dashboard"
+                  >
+                    Admin
+                  </Link>
+                )}
+
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  to="/orders"
+                  aria-label="Orders"
+                >
+                  Orders
+                </Link>
+                <button
+                  onClick={logoutHandler}
+                  aria-label="Sign Out"
+                  className="flex items-center space-x-2"
+                >
+                  <FaSignOutAlt className="text-xl" />
+                  <span>Sign Out</span>
+                </button>
+              </div>
+            </dialog>
+          </>
+        ) : (
+          <Link to="/login" aria-label="Login">
+            <FaSignInAlt className="text-2xl" />
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };

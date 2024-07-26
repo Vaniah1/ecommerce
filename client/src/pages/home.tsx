@@ -44,23 +44,10 @@ const clients = [
     src: "https://www.vectorlogo.zone/logos/docker/docker-ar21.svg",
     alt: "Docker",
   },
-  {
-    src: "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-ar21.svg",
-    alt: "Kubernetes",
-  },
-  {
-    src: "https://www.vectorlogo.zone/logos/nestjs/nestjs-ar21.svg",
-    alt: "Nest.js",
-  },
 
   {
-    src: "https://www.vectorlogo.zone/logos/graphql/graphql-ar21.svg",
-    alt: "GraphQL",
-  },
-
-  {
-    src: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-ar21.svg",
-    alt: "Jest",
+    src: "https://upload.wikimedia.org/wikipedia/commons/7/75/Playwright_Logo.svg",
+    alt: "Playwright",
   },
 
   {
@@ -71,9 +58,7 @@ const clients = [
 
 const banners = [
   "https://res.cloudinary.com/dj5q966nb/image/upload/v1719253445/rmbjpuzctjdbtt8hewaz.png",
-  "https://i.pinimg.com/564x/1f/75/a4/1f75a4bf9518ea635f983c5af012b84b.jpg",
   "https://res.cloudinary.com/dj5q966nb/image/upload/v1719253433/ticeufjqvf6napjhdiee.png",
-  "https://i.pinimg.com/564x/f4/8b/c4/f48bc44bdf3847d4e91cae3525b94873.jpg",
 ];
 const categories = [
   "Electronics",
@@ -132,12 +117,20 @@ const Home = () => {
         <section></section>
 
         <div>
-          <aside>
-            <h1>Categories</h1>
-            <ul>
-              {categories.map((i) => (
-                <li key={i}>
-                  <Link to={`/search?category=${i.toLowerCase()}`}>{i}</Link>
+          <aside className="bg-gradient-to-r from-purple-400 to-indigo-800 p-6 rounded-lg shadow-md">
+            <h1 className="text-2xl font-bold mb-4 text-white">Categories</h1>
+            <ul className="space-y-2">
+              {categories.map((category) => (
+                <li
+                  key={category}
+                  className="transition-all duration-300 hover:translate-x-2"
+                >
+                  <Link
+                    to={`/search?category=${category.toLowerCase()}`}
+                    className="text-white hover:text-blue-600 font-bold block py-2 px-3 rounded hover:bg-white "
+                  >
+                    {category}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -57,7 +57,7 @@ const NewProduct = () => {
   return (
     <div className="admin-container flex -z-10">
       <AdminSidebar />
-      <main className="product-management">
+      <main className="product-management z-10">
         <article>
           <form onSubmit={submitHandler}>
             <h2>New Product</h2>

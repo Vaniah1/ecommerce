@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-col text-black">
-            <h4>Company</h4>
+            <h4 className="text-white">Shoppy</h4>
             <ul>
               <li>
                 <a href="#">About Us</a>

@@ -2,7 +2,6 @@
   padding: 2rem 5%;
   display: flex;
   flex-direction: column;
-  // min-height: calc(100vh - 4rem);
   max-width: 1920px;
   margin: auto;
   width: 100%;
@@ -13,6 +12,18 @@
     height: 20rem;
     margin: auto;
     background: url("../assets/cover.jpg") no-repeat center / cover;
+    filter: brightness(70%);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
   }
 
   > div {
@@ -22,34 +33,52 @@
     gap: 5rem;
 
     aside {
-      width: 10%;
+      width: 20%;
       // border: 1px solid $color3;
       flex: none;
+      position: relative;
+
       h1 {
         @include heading(1px);
         margin-bottom: 3rem;
+        position: relative;
         @include flex(row, space-between, center);
+
         &::before {
           content: "";
-          width: 3px;
+          width: 4px;
           height: 2rem;
           background-color: $color3;
           position: absolute;
-          transform: translateX(-1rem);
+          transform: translateX(-1.5rem);
         }
       }
 
       > ul {
         @include flex(column, flex-start, flex-start);
         list-style: none;
+        gap: 1rem;
+
         > li {
           cursor: pointer;
-          color: red;
-          flex: none;
+          color: $color3;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $color2; // Adjust to your preferred hover color
+          }
         }
       }
+
       .findmore {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        color: $color3;
+        font-weight: bold;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color2; // Adjust to your preferred hover color
+        }
       }
     }
   }
@@ -61,7 +90,14 @@
   }
 
   .findmore {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: $color3;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color2; // Adjust to your preferred hover color
+    }
   }
 
   > main {
@@ -85,20 +121,30 @@
   @include flex(column, flex-start, center, 4px);
   position: relative;
   background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover > div {
-    opacity: 1;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   img {
     @include square(calc(18.75rem - 3rem));
     object-fit: cover;
-    margin: 1rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   span {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: $color3;
   }
 
   > div {
@@ -107,23 +153,34 @@
     @include square(100%);
     top: 0;
     left: 0;
-    background-color: #0000006b;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5rem;
     @include flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+
     button,
     a {
       @include flex;
       @include square(3rem);
-      border-radius: 100%;
+      border-radius: 50%;
       border: none;
       background-color: $color3;
       cursor: pointer;
-      color: $color1;
-      font-size: 1.1rem;
-      transition: all 0.3s;
+      color: white;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
       &:hover {
-        rotate: 20deg;
+        background-color: $color2; // Adjust to your preferred hover color
+        transform: rotate(20deg);
       }
     }
+  }
+
+  &:hover > div {
+    opacity: 1;
   }
 }
 
@@ -143,21 +200,30 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
+
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(60%);
   }
+
   > span {
     position: absolute;
     bottom: 2rem;
     z-index: 1;
+    color: white;
 
     svg {
-      color: white;
       font-size: 3rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
+
   .cover-video-content {
     z-index: 3;
     position: absolute;
@@ -166,43 +232,62 @@
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+
     h2 {
-      font-size: 3rem;
+      font-size: 4rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
+
     span {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      margin-top: 1rem;
     }
   }
 }
 
 .our-services {
-  background-color: #fff; // Light grey background
-  padding: 10rem;
+  background-color: #f8f9fa; // Light background
+  padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
 
   > ul {
     max-width: 1367px;
     margin: 0 auto;
-
     @include grid(1fr 1fr 1fr, 0, auto);
     list-style: none;
+    gap: 2rem;
+
     > li {
       @include flex(column);
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+      }
+
       > div {
         background-color: black;
         @include square(5rem);
         @include flex;
         border-radius: 50%;
         border: 0.6rem solid gray;
-        transition: all 0.3s ease;
+        transition: border 0.3s ease, transform 0.3s ease;
+
         svg {
           color: white;
           font-size: 2.5rem;
         }
 
         &:hover {
-          border: 0rem solid rgb(0, 0, 0);
+          border: 0.6rem solid $color3;
+          transform: scale(1.1);
         }
       }
 
@@ -211,12 +296,15 @@
         text-align: center;
         gap: 0;
         margin-top: 1rem;
+
         h3 {
-          font-size: 1.5rem;
-          color: #000000;
+          font-size: 1.75rem;
+          color: $color3;
+          font-weight: bold;
         }
+
         p {
-          font-size: 1rem;
+          font-size: 1.1rem;
           color: #3a3a3a;
         }
       }
@@ -225,8 +313,8 @@
 }
 
 .our-clients {
-  background-color: #fff; // Light grey background
-  padding: 10rem;
+  background-color: #f8f9fa; // Light background
+  padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
 
@@ -239,7 +327,8 @@
       text-align: center;
       @include heading;
       margin-bottom: 4rem;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
     }
 
     div {
@@ -248,12 +337,12 @@
       gap: 3rem;
 
       img {
-        height: 3rem; // Fixed height for all logos
+        height: 4rem; // Increased height for logos
         width: auto;
         transition: transform 0.3s ease;
 
         &:hover {
-          transform: scale(1.1); // Slightly enlarge logos on hover
+          transform: scale(1.15); // Slightly enlarge logos on hover
         }
       }
     }
@@ -262,6 +351,8 @@
       text-align: center;
       margin-top: 4rem;
       margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #333;
     }
   }
 }

@@ -1,11 +1,13 @@
 .footer {
+  z-index: 10;
   background-color: #333;
   padding: 40px 0;
   font-weight: bold;
+  color: #f4f4f4;
 
   .footer-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 20px;
   }
 
@@ -22,16 +24,16 @@
 
     h4 {
       font-size: 18px;
-      color: #f4f4f4;
       text-transform: uppercase;
       margin-bottom: 20px;
       position: relative;
+      padding-bottom: 10px;
 
       &:after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -100px;
+        bottom: 0;
         background-color: $color3;
         height: 2px;
         width: 50px;
@@ -52,6 +54,7 @@
 
           &:hover {
             color: #fff;
+            text-decoration: underline;
           }
         }
       }
@@ -59,7 +62,9 @@
   }
 
   .social-links {
-    @include flex(column, flex-start, flex-start);
+    @include flex(row, flex-start, flex-start);
+    gap: 10px;
+
     a {
       height: 40px;
       width: 40px;
@@ -68,15 +73,29 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: $color3;
+        transform: translateY(-3px);
       }
 
       svg {
         color: #fff;
         font-size: 20px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    .footer-row {
+      flex-direction: column;
+    }
+
+    .footer-col {
+      min-width: 100%;
     }
   }
 }
