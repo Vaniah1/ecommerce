@@ -93,7 +93,7 @@ const Header = ({ user }: PropsType) => {
               className="flex items-center space-x-2 focus:outline-none"
             >
               <FaUser className="text-2xl" />
-              <span className="hidden md:inline">{user.name}!</span>
+              <span className="hidden md:inline">{user.name}</span>
             </button>
             <AnimatePresence>
               {isOpen && (
