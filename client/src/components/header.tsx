@@ -76,16 +76,17 @@ const Header = ({ user }: PropsType) => {
               <FaUser className="text-2xl" />
             </button>
             <dialog
-              className="bg-gradient-to-r from-purple-400 to-indigo-800 z-50 p-4 rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-900 z-50 p-6 rounded-xl shadow-2xl mr-5 w-64 backdrop-blur-sm"
               open={isOpen}
-              onClick={() => setIsOpen(false)} // Close dialog when clicking outside
+              onClick={() => setIsOpen(false)}
             >
-              <div className="bg-gradient-to-r from-purple-400 to-indigo-800 p-4 rounded-lg">
+              <div className="space-y-4">
                 {user.role === "admin" && (
                   <Link
                     onClick={() => setIsOpen(false)}
                     to="/admin/dashboard"
                     aria-label="Admin Dashboard"
+                    className="block text-white hover:text-purple-200 transition-colors duration-200 font-semibold"
                   >
                     Admin
                   </Link>
@@ -95,13 +96,14 @@ const Header = ({ user }: PropsType) => {
                   onClick={() => setIsOpen(false)}
                   to="/orders"
                   aria-label="Orders"
+                  className="block text-white hover:text-purple-200 transition-colors duration-200 font-semibold"
                 >
                   Orders
                 </Link>
                 <button
                   onClick={logoutHandler}
                   aria-label="Sign Out"
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-2 text-white hover:text-purple-200 transition-colors duration-200 font-semibold"
                 >
                   <FaSignOutAlt className="text-xl" />
                   <span>Sign Out</span>
