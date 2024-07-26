@@ -226,18 +226,19 @@ Replace the placeholder values with your actual credentials.
 4.  Start the server:
 
 ```bash
-npm run server
+cd server
+npm run dev
 ```
 
 5.  In a new terminal, start the client:
 
 ```bash
    cd client
-   npm start
+   npm run dev
 
 ```
 
-6.  Open your browser and navigate to `http://localhost:3000` to view the application.
+6.  Open your browser and navigate to `http://localhost:5173` to view the application.
 
 ## Additional Notes
 
