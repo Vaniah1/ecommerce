@@ -4,7 +4,7 @@ Welcome to this exciting e-commerce project! 🛍️
 
 ## Before we start
 
-## Stipe Demo card Details for Testing
+## Stripe Demo card Details for Testing
 
 ```txt
 CARD NO: 4242424242424242	
