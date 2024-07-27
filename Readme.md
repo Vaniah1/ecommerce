@@ -288,6 +288,17 @@ To view the project live link:
 
 - [Project Link](https://shoppy-vaniah.netlify.app/)
 
+---
+##Stipe Demo card Details for Testing
+
+```txt
+CARD NO: 4242424242424242	
+CVC:Any 3 digits	
+EXPIRY: Any future date
+```
+Or you can search for stripe provided card numbers for testing in [Stripe Account Numbers](https://docs.stripe.com/testing)
+  
+
 
 Happy coding and happy shopping! 🎉🛍️
 
