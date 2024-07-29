@@ -192,7 +192,7 @@ $color3: rgba(19, 194, 194, 132);
 
   th {
     font-weight: bold;
-    color: #0000009e;
+    color: rgb(61, 239, 239);
     font-size: 1.1rem;
     font-weight: 400;
     padding: 2rem 1rem;
@@ -253,7 +253,7 @@ $color3: rgba(19, 194, 194, 132);
     outline: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: rgb(106, 0, 97);
+    background-color: teal;
     color: white;
     &:disabled {
       background-color: rgba(0, 115, 255, 0.1);
