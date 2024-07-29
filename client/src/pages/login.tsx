@@ -1,7 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase";
 import { getUser, useLoginMutation } from "../redux/api/userAPI";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
@@ -106,7 +105,7 @@ const Login = () => {
 
         <div className="flex flex-col items-center">
           <p
-            className="text-teal-700 mb-4 hover:text-teal-300"
+            className="text-teal-700 mb-4 hover:text-tal-300"
             onClick={loginHandler}
           >
             Already signed in once?
