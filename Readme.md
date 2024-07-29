@@ -2,6 +2,18 @@
 
 Welcome to this exciting e-commerce project! 🛍️
 
+## Before we start
+
+## Stripe Demo card Details for Testing
+
+```txt
+CARD NO: 4242424242424242	
+CVC:Any 3 digits	
+EXPIRY: Any future date
+```
+Or you can search for stripe provided card numbers for testing in [Stripe Account Numbers](https://docs.stripe.com/testing)
+  
+
 ## 👨‍💻 About the Developer
 
 This project is brought to you by **Vaniah Ndungu**, a passionate junior full-stack web developer with a passion for:
@@ -288,6 +300,7 @@ To view the project live link:
 
 - [Project Link](https://shoppy-vaniah.netlify.app/)
 
+---
 
 Happy coding and happy shopping! 🎉🛍️
 
