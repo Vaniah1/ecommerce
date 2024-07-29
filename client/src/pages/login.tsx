@@ -8,7 +8,7 @@ import { FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
 import { MessageResponse } from "../types/api-types";
 import { userExist, userNotExist } from "../redux/reducer/userReducer";
 import { useDispatch } from "react-redux";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaGoogle, FaShoppingCart } from "react-icons/fa";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -65,20 +65,20 @@ const Login = () => {
   return (
     <div className="login min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
       <main className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <FaShoppingCart className="text-4xl mx-auto mb-4 text-gray-800" />
-        <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">
+        <FaShoppingCart className="text-4xl mx-auto mb-4 text-teal-300" />
+        <h1 className="text-2xl font-bold mb-6 text-center text-teal-300">
           Login to Shoppy
         </h1>
 
         <div className="mb-4">
-          <label htmlFor="gender" className="block text-gray-700 mb-2">
+          <label htmlFor="gender" className="block text-teal-500 mb-2">
             Gender
           </label>
           <select
             id="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-teal-300 rounded bg-black"
             aria-label="Select Gender"
           >
             <option value="">Select Gender</option>
@@ -88,7 +88,10 @@ const Login = () => {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="dob" className="block text-gray-700 mb-2">
+          <label
+            htmlFor="dob"
+            className="w-full p-2 border border-teal-300 rounded bg-black"
+          >
             Date of Birth
           </label>
           <input
@@ -96,20 +99,25 @@ const Login = () => {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-teal-300 rounded "
             aria-label="Date of Birth"
           />
         </div>
 
         <div className="flex flex-col items-center">
-          <p className="text-gray-700 mb-4">Already signed in once?</p>
+          <p
+            className="text-teal-700 mb-4 hover:text-teal-300"
+            onClick={loginHandler}
+          >
+            Already signed in once?
+          </p>
+
           <button
             onClick={loginHandler}
-            className="flex items-center bg-blue-600 text-white p-2 rounded-lg shadow hover:bg-blue-700 transition-all"
+            className="flex items-center bg-black text-white p-4 rounded-lg shadow hover:border-teal-300 transition-all"
             aria-label="Sign in with Google"
           >
-            <FcGoogle className="text-2xl mr-2" />
-            <span>Sign in with Google</span>
+            <FaGoogle className="hover:text-teal-300 text-2xl mr-2 " />
           </button>
         </div>
       </main>

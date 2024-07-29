@@ -20,6 +20,7 @@
         @include inputStyle;
         border: 1px solid rgba(23, 184, 187, 0.53);
         border-radius: 5px;
+        background-color: black;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
@@ -32,13 +33,14 @@
         width: 70%;
         margin: auto;
         height: 3rem;
-        @include btn(unset, white, black);
+        @include btn(unset, black, rgb(2, 109, 109));
         @include flex;
-        border: 1px solid white;
+        border: 1px solid teal;
+        padding: 5px;
         border-radius: 5px;
         font-size: 1.05rem;
         > svg {
-          background-color: white;
+          background-color: black;
           width: 30%;
           border-radius: 5px;
           height: 100%;
