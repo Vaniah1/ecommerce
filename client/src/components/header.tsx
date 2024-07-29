@@ -43,7 +43,7 @@ const Header = ({ user }: PropsType) => {
   }, []);
 
   return (
-    <nav className="header bg-gradient-to-r from-purple-400 to-indigo-800 text-white flex items-center justify-between p-4">
+    <nav className="header bg-gradient-to-r from-teal-900 to-teal-500 text-white flex items-center justify-between p-4">
       <div className="flex items-center">
         <Link
           to="/"
@@ -96,13 +96,13 @@ const Header = ({ user }: PropsType) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute right-0 mt-2 w-48 bg-purple-300 rounded-md shadow-lg py-1 z-10"
+                  className="absolute right-0 mt-2 w-48 bg-teal-300 rounded-md shadow-lg py-1 z-10"
                 >
                   {user.role === "admin" && (
                     <Link
                       onClick={() => setIsOpen(false)}
                       to="/admin/dashboard"
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-100 transition-colors duration-200"
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-teal-300 transition-colors duration-200"
                     >
                       Admin Dashboard
                     </Link>
@@ -110,13 +110,13 @@ const Header = ({ user }: PropsType) => {
                   <Link
                     onClick={() => setIsOpen(false)}
                     to="/orders"
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-100 transition-colors duration-200"
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-teal-300 transition-colors duration-200"
                   >
                     Orders
                   </Link>
                   <button
                     onClick={logoutHandler}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-100 transition-colors duration-200"
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-teal-300 transition-colors duration-200"
                   >
                     Sign Out
                   </button>

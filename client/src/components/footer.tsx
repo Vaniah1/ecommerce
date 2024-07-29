@@ -7,7 +7,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer bg-gradient-to-r from-purple-400 to-indigo-800 text-black font-bold">
+    <footer className="footer bg-gradient-to-r from-teal-900 to-teal-500 text-white flex items-center justify-between p-4">
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-col text-black">

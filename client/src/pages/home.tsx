@@ -117,7 +117,7 @@ const Home = () => {
         <section></section>
 
         <div>
-          <aside className="bg-gradient-to-r from-purple-400 to-indigo-800 p-6 rounded-lg shadow-md">
+          <aside className="bg-gradient-to-r from-teal-900 to-teal-500 p-6 rounded-lg shadow-md">
             <h1 className="text-2xl font-bold mb-4 text-white">Categories</h1>
             <ul className="space-y-2">
               {categories.map((category) => (

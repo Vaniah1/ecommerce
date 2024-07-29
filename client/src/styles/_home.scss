@@ -2,9 +2,9 @@
   padding: 2rem 5%;
   display: flex;
   flex-direction: column;
-  max-width: 1920px;
   margin: auto;
   width: 100%;
+  background-color: #000;
 
   > section {
     display: none;
@@ -120,7 +120,10 @@
   flex: none;
   @include flex(column, flex-start, center, 4px);
   position: relative;
-  background-color: white;
+  background-color: #000;
+  border: 3px solid teal;
+  color: white;
+  font-weight: 700;
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -212,7 +215,7 @@
     position: absolute;
     bottom: 2rem;
     z-index: 1;
-    color: white;
+    color: rgb(70, 213, 213);
 
     svg {
       font-size: 3rem;
@@ -236,7 +239,7 @@
     h2 {
       font-size: 4rem;
       font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(171, 167, 167, 0.5);
     }
 
     span {
@@ -247,7 +250,8 @@
 }
 
 .our-services {
-  background-color: #f8f9fa; // Light background
+  background-color: #1f1e1e;
+  color: #fff; // Light background
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
@@ -261,23 +265,23 @@
 
     > li {
       @include flex(column);
-      background-color: white;
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: teal solid 2px;
+      box-shadow: 0 4px 8px rgba(80, 232, 204, 0.1);
       transition: box-shadow 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px rgba(95, 239, 239, 0.2);
         transform: translateY(-5px);
       }
 
       > div {
-        background-color: black;
+        background-color: #1f1e1e;
         @include square(5rem);
         @include flex;
         border-radius: 50%;
-        border: 0.6rem solid gray;
+        border: 0.6rem solid teal;
         transition: border 0.3s ease, transform 0.3s ease;
 
         svg {
@@ -305,7 +309,7 @@
 
         p {
           font-size: 1.1rem;
-          color: #3a3a3a;
+          color: teal;
         }
       }
     }
@@ -313,7 +317,8 @@
 }
 
 .our-clients {
-  background-color: #f8f9fa; // Light background
+  background-color: #1f1e1e;
+  color: #fff; // Light background
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
@@ -323,7 +328,7 @@
     margin: 0 auto;
 
     h2 {
-      color: #333; // Dark text color for the title
+      color: #fff; // Dark text color for the title
       text-align: center;
       @include heading;
       margin-bottom: 4rem;
@@ -352,7 +357,7 @@
       margin-top: 4rem;
       margin-bottom: 2rem;
       font-size: 1.1rem;
-      color: #333;
+      color: #fff;
     }
   }
 }

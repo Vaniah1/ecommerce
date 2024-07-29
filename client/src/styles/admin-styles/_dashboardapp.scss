@@ -1,10 +1,11 @@
 .dashboard-app-container {
-  background-color: white;
+  background-color: black;
   padding: 4rem;
 
   > section {
     @include flex(column, center, center, 2rem);
     height: 100%;
+    color: white;
 
     .stopwatch {
       > h2 {
@@ -63,11 +64,13 @@
       @include grid(2fr 1fr, 2rem);
       max-width: 30rem;
       width: 100%;
+
       > input {
         padding: 1rem;
-        border: 1px solid rgba(0, 0, 0, 0.359);
+        border: 1px solid rgba(84, 208, 177, 0.359);
         outline: none;
         border-radius: 5px;
+        color: black;
       }
 
       > fieldset {

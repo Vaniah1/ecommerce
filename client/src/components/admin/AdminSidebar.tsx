@@ -174,15 +174,13 @@ interface LiProps {
 const Li = ({ url, text, location, Icon }: LiProps) => (
   <li
     style={{
-      backgroundColor: location.pathname.includes(url)
-        ? "rgba(0,115,255,0.1)"
-        : "white",
+      backgroundColor: location.pathname.includes(url) ? "teal" : "black",
     }}
   >
     <Link
       to={url}
       style={{
-        color: location.pathname.includes(url) ? "rgb(0,115,255)" : "black",
+        color: location.pathname.includes(url) ? "black" : "white",
       }}
     >
       <Icon />

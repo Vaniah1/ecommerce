@@ -72,7 +72,7 @@ export const connectDB = (uri: string) => {
     .connect(uri, {
       dbName: "Ecommerce_24",
     })
-    .then((c) => console.log(`DB Connected to ${c.connection.host}`))
+    .then((c) => console.log(`MongoDb Conneced`))
     .catch((e) => console.log(e));
 };
 
