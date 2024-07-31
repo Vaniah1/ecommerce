@@ -74,9 +74,9 @@
     @include flex(column, center, flex-start, 0.25rem);
     a {
       font-size: 1.2rem;
-      color: $color2;
+      color: white;
       &:hover {
-        color: $color3;
+        color: teal;
       }
     }
 

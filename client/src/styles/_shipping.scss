@@ -3,8 +3,8 @@
 
   .back-btn {
     @include square(2.5rem);
-    background-color: $color2;
-    color: $color1;
+    background-color: black;
+    color: white;
     @include flex;
     position: fixed;
     top: 2rem;
@@ -37,8 +37,10 @@
     }
     > input,
     > select {
-      border: 1px solid rgba(31, 31, 31, 0.351);
+      border: 1px solid teal;
       padding: 1rem;
+      background-color: black;
+      color: white;
       outline: none;
       font-size: 1.05rem;
       border-radius: 5px;
